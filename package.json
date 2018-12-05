@@ -17,12 +17,18 @@
   },
   "homepage": "https://github.com/manosriram/movieInfo#readme",
   "dependencies": {
+    "alert-node": "^1.2.2",
+    "body-parser": "^1.18.3",
+    "connect": "^3.6.6",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
+    "js-alert": "^1.0.4",
     "jsonwebtoken": "^8.4.0",
     "nodemon": "^1.18.7",
     "passport": "^0.4.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "request": "^2.88.0",
+    "wikijs": "^4.10.0"
   }
 }

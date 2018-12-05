@@ -1,8 +1,93 @@
 const express = require("express");
 const router = express.Router();
+const jsonwt = require("jsonwebtoken");
+const app = express();
+const request = require("request");
+const alert = require("alert-node");
+const fs = require("fs");
+const wiki = require("wikijs").default;
 
 router.get("/", (req, res) => {
-  res.send("Auth Home Page!!");
+  res.send("Hey there from Auth!");
 });
+
+router.post("/searchM", (req, res) => {
+  if (req.body.search) {
+    const key = `http://www.omdbapi.com/?t=${req.body.search}&apikey=5d43c09e`;
+    request(
+      {
+        url: key,
+        json: true
+      },
+      (err, response, body) => {
+        try {
+          if (!body.Ratings) {
+            res.render("err");
+          } else throw error;
+        } catch (error) {
+          if (
+            !err &&
+            (response.statusCode == 200 || response.statusCode == 302)
+          ) {
+            if (body.imdbRating) {
+              let data = `Title: ${body.Title}\nYear: ${body.Year}\nReleased: ${
+                body.Released
+              }\nGenre: ${body.Genre}\nDirector: ${body.Director}\nActors: ${
+                body.Actors
+              }\nPlot: ${body.Plot}\nLanguage: ${body.Language}\nCountry: ${
+                body.Country
+              }\nIMDB Rating: ${body.imdbRating}\nIMDB Votes: ${
+                body.imdbVotes
+              }\nBox Office: ${body.BoxOffice}\nType: ${
+                body.Type
+              }\n\n\n\nBy - A.Mano Sriram\n`;
+
+              fs.writeFile(`./doc/${body.Title}.txt`, data, err => {
+                if (err) throw err;
+              });
+
+              res.render("movInf", {
+                data: body
+              });
+            } else res.render("err");
+          } else res.render("err");
+        }
+      }
+    );
+  } else {
+    alert("Please Enter Your Movie!");
+    res.render("home");
+  }
+});
+
+router.get("/getMovie/:movie", (req, res) => {
+  // if (res.status == 404)
+  word = req.params.movie;
+  request(
+    `https://en.wikipedia.org/wiki/${req.params.movie} (film)`,
+    (err, response, body) => {
+      if (!err && (response.statusCode == 200 || response.statusCode == 302)) {
+        res.redirect(
+          `https://en.wikipedia.org/wiki/${req.params.movie} (film)`
+        );
+      } else {
+        res.redirect(`https://en.wikipedia.org/wiki/${req.params.movie}`);
+      }
+    }
+  );
+});
+
+router.get("/getWiki/:movie", (req, res) => {
+  const word = req.params.movie;
+  word.replace(" ", "_");
+  res.redirect(`https://en.wikipedia.org/wiki/${word} (film)`);
+});
+
+router.get("/getFile/:title", (req, res) => {
+  res.download(`./doc/${req.params.title}.txt`);
+});
+
+//Sarkar (2018 film)
+//https://en.wikipedia.org/wiki/Sarkar (2018 film)
 
 module.exports = router;

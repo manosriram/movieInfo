@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include bootstrap.ejs %>
+    <link
+      href="https://fonts.googleapis.com/css?family=Kalam"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Info</title>
+  </head>
+  <style>
+    img {
+      margin-left: 35%;
+    }
+
+    body {
+      font-family: "Kalam", cursive;
+      background: #2f363f;
+    }
+
+    .jumbotron {
+      /* text-align: center; */
+    }
+
+    h3,
+    h4,
+    h1 {
+      color: #2f363f;
+    }
+    #wiki {
+      text-align: center;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <img src="<%= data.Poster %>" alt="No Poster Found!" />
+      <div class="jumbotron">
+        <h1><strong>Title :</strong> <%= data.Title %></h1>
+        <br />
+        <h3><strong>Year :</strong> <%= data.Year %></h3>
+        <br />
+        <h3><strong>Released :</strong> <%= data.Released %></h3>
+        <br />
+        <h3><strong>Director</strong> : <%= data.Director %></h3>
+        <br />
+        <h3><strong>Writer</strong> <%= data.Writer %></h3>
+        <br />
+        <h3><strong>Actors</strong> <%= data.Actors %></h3>
+        <br />
+        <h3><strong>Runtime</strong> <%= data.Runtime %></h3>
+        <br />
+        <h3><strong>Genre</strong> <%= data.Genre %></h3>
+        <br />
+        <h3><strong>Plot : </strong></h3>
+        <h4><%= data.Plot %></h4>
+        <br />
+        <h3><strong>Language</strong> <%= data.Language %></h3>
+        <br />
+        <h3><strong>Country</strong> <%= data.Country %></h3>
+        <br />
+        <h3><strong>Rating</strong> <%= data.Ratings[0].Value %></h3>
+        <br />
+        <h3><strong>IMDB Votes</strong> <%= data.imdbVotes %></h3>
+        <br />
+        <h3><strong>Type : </strong><%= data.Type %></h3>
+        <br />
+        <% if (data.BoxOffice) { %>
+        <h3><strong>Box Office : </strong><%= data.BoxOffice %></h3>
+        <% } %> <br /><br />
+        <h2 id="wiki">
+          <a href="/api/getMovie/<%=data.Title %>"><%= data.Title %> Wiki </a>
+        </h2>
+        <h2 id="wiki">
+          <a href="/api/getFile/<%=data.Title%>"
+            >Download Text File of this Movie..</a
+          >
+        </h2>
+        <h2 id="wiki"><a href="/">BACK</a></h2>
+
+        <!-- Sarkar (2018 film) -->
+      </div>
+    </div>
+  </body>
+</html>
