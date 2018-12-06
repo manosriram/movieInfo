@@ -87,7 +87,4 @@ router.get("/getFile/:title", (req, res) => {
   res.download(`./doc/${req.params.title}.txt`);
 });
 
-//Sarkar (2018 film)
-//https://en.wikipedia.org/wiki/Sarkar (2018 film)
-
 module.exports = router;
