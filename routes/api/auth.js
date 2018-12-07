@@ -34,7 +34,7 @@ router.post("/searchM", (req, res) => {
                 body.Released
               }\nGenre: ${body.Genre}\nDirector: ${body.Director}\nActors: ${
                 body.Actors
-              }\nPlot: ${body.Plot}\nLanguage: ${body.Language}\nCountry: ${
+              }\n\nPlot: ${body.Plot}\n\nLanguage: ${body.Language}\nCountry: ${
                 body.Country
               }\nIMDB Rating: ${body.imdbRating}\nIMDB Votes: ${
                 body.imdbVotes
