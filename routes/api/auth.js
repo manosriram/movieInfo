@@ -62,7 +62,7 @@ router.post("/searchM", (req, res) => {
 
 router.get("/getMovie/:movie", (req, res) => {
   // if (res.status == 404)
-  word = req.params.movie;
+
   request(
     `https://en.wikipedia.org/wiki/${req.params.movie} (film)`,
     (err, response, body) => {
@@ -86,5 +86,4 @@ router.get("/getWiki/:movie", (req, res) => {
 router.get("/getFile/:title", (req, res) => {
   res.download(`./doc/${req.params.title}.txt`);
 });
-
 module.exports = router;
