@@ -21,7 +21,12 @@ router.post("/searchM", (req, res) => {
       },
       (err, response, body) => {
         try {
-          if (!body.Ratings) {
+          if (
+            response.statusCode == 404 ||
+            response.statusCode == 400 ||
+            response.statusCode == 403 ||
+            response.statusCode == 401
+          ) {
             res.render("err");
           } else throw error;
         } catch (error) {
