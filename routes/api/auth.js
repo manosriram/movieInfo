@@ -22,11 +22,12 @@ router.post("/searchM", (req, res) => {
       (err, response, body) => {
         try {
           if (
-            response.statusCode == 404 ||
+            (response.statusCode == 500).json(response.statusCode == 500) ||
             response.statusCode == 400 ||
             response.statusCode == 403 ||
             response.statusCode == 401 ||
-            response.statusCode == 503
+            response.statusCode == 503 ||
+            response.statusCode == 403
           ) {
             res.render("err");
           } else throw error;
@@ -48,7 +49,7 @@ router.post("/searchM", (req, res) => {
                 body.Type
               }\n\n\n\nBy - A.Mano Sriram\n`;
 
-              fs.writeFile(`/doc/${body.Title}.txt`, data, err => {
+              fs.writeFile(`./doc/${body.Title}.txt`, data, err => {
                 console.log("File Saved!!");
               });
 
