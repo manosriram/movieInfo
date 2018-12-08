@@ -1,16 +1,16 @@
 Title: Sarkar
-Year: 2018
-Released: 06 Nov 2018
-Genre: Action, Drama
-Director: A.R. Murugadoss
-Actors: Joseph Vijay, Keerthi Suresh, Varalaxmi Sarathkumar, Roger Julian Cross
+Year: 2005
+Released: 01 Jul 2005
+Genre: Crime, Drama
+Director: Ram Gopal Varma
+Actors: Amitabh Bachchan, Abhishek Bachchan, Kay Kay Menon, Supriya Pathak
 
-Plot: A successful businessman gets involved in a political battle with 2 notorious ministers regarding the well being of fishermen in Tamil Nadu.
+Plot: The authority of a man, who runs a parallel government in Mumbai, is challenged. His son rises to face his enemies.
 
-Language: Tamil
+Language: Hindi, Marathi
 Country: India
-IMDB Rating: N/A
-IMDB Votes: N/A
+IMDB Rating: 7.7
+IMDB Votes: 13,846
 Box Office: N/A
 Type: movie
 
