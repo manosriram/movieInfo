@@ -73,7 +73,9 @@
         <h3><strong>Box Office : </strong><%= data.BoxOffice %></h3>
         <% } %> <br /><br />
         <h2 id="wiki">
-          <a href="/api/getMovie/<%=data.Title %>"><%= data.Title %> Wiki </a>
+          <a href="/api/getMovie/<%=data.Title %>/<%= data.Year%>"
+            ><%= data.Title %> Wiki
+          </a>
         </h2>
         <h2 id="wiki">
           <a href="/api/getFile/<%=data.Title%>"

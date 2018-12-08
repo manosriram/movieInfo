@@ -69,21 +69,17 @@ router.post("/searchM", (req, res) => {
   }
 });
 
-router.get("/getMovie/:movie", (req, res) => {
+router.get("/getMovie/:movie/:year", (req, res) => {
   // if (res.status == 404)
-
-  request(
-    `https://en.wikipedia.org/wiki/${req.params.movie} (film)`,
-    (err, response, body) => {
-      if (!err && (response.statusCode == 200 || response.statusCode == 302)) {
-        res.redirect(
-          `https://en.wikipedia.org/wiki/${req.params.movie} (film)`
-        );
-      } else {
-        res.redirect(`https://en.wikipedia.org/wiki/${req.params.movie}`);
-      }
+  var word = `${req.params.movie}_(${req.params.year} film)`;
+  word = word.replace(" ", "_");
+  request(`https://en.wikipedia.org/wiki/${word}`, (err, response, body) => {
+    if (!err && (response.statusCode == 200 || response.statusCode == 302)) {
+      res.redirect(`https://en.wikipedia.org/wiki/${word}`);
+    } else {
+      res.redirect(`https://en.wikipedia.org/wiki/${req.params.movie}`);
     }
-  );
+  });
 });
 
 router.get("/getWiki/:movie", (req, res) => {
