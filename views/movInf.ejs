@@ -42,27 +42,30 @@
         <br />
         <h3><strong>Released :</strong> <%= data.Released %></h3>
         <br />
-        <h3><strong>Director</strong> : <%= data.Director %></h3>
+        <h3><strong>Director : </strong> : <%= data.Director %></h3>
         <br />
-        <h3><strong>Writer</strong> <%= data.Writer %></h3>
+        <h3><strong>Writer(s) : </strong> <%= data.Writer %></h3>
         <br />
-        <h3><strong>Actors</strong> <%= data.Actors %></h3>
+        <h3><strong>Actors : </strong> <%= data.Actors %></h3>
         <br />
-        <h3><strong>Runtime</strong> <%= data.Runtime %></h3>
+        <h3><strong>Runtime : </strong> <%= data.Runtime %></h3>
         <br />
-        <h3><strong>Genre</strong> <%= data.Genre %></h3>
+        <h3><strong>Genre : </strong> <%= data.Genre %></h3>
         <br />
         <h3><strong>Plot : </strong></h3>
         <h4><%= data.Plot %></h4>
         <br />
-        <h3><strong>Language</strong> <%= data.Language %></h3>
+        <h3><strong>Language : </strong> <%= data.Language %></h3>
         <br />
-        <h3><strong>Country</strong> <%= data.Country %></h3>
+        <h3><strong>Country : </strong> <%= data.Country %></h3>
         <br />
         <% if(data.Ratings[0]) { %>
-        <h3><strong>Rating</strong> <%= data.Ratings[0].Value %></h3>
-        <% } %> <br />
-        <h3><strong>IMDB Votes</strong> <%= data.imdbVotes %></h3>
+        <h3><strong>Rating : </strong> <%= data.Ratings[0].Value %></h3>
+        <% } else { %>
+        <h3><strong>Rating : </strong> N/A</h3>
+        <br />
+        <% } %>
+        <h3><strong>IMDB Votes : </strong> <%= data.imdbVotes %></h3>
         <br />
         <h3><strong>Type : </strong><%= data.Type %></h3>
         <br />
