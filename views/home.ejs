@@ -38,18 +38,32 @@
     input:focus {
       outline: 0;
     }
+
     #year {
       text-align: center;
       width: auto;
       font-size: 25px;
       border-radius: 30px;
+      display: inline-block;
+    }
+    form {
+      display: inline-block;
+    }
+    .container {
+      text-align: center;
+    }
+    #title {
+      text-align: center;
     }
   </style>
   <body>
-    <div class="jumbotron"><h1 id="main">IMDB Movie Station</h1></div>
+    <!-- <div class="jumbotron"><h1 id="main"></h1></div> -->
     <!-- </div> -->
     <div class="container">
       <form action="/api/searchM" method="POST">
+        <br /><br />
+        <h1 id="title">IMDB Movie Station</h1>
+        <br /><br /><br /><br /><br />
         <input
           id="name"
           type="text"
@@ -58,7 +72,8 @@
           autocomplete="off"
           autofocus
         />
-        <blockquote></blockquote>
+        <br />
+        <br />
         <input
           type="text"
           name="year"
