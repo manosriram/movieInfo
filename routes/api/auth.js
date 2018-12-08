@@ -48,8 +48,8 @@ router.post("/searchM", (req, res) => {
                 body.Type
               }\n\n\n\nBy - A.Mano Sriram\n`;
 
-              fs.writeFile(`./doc/${body.Title}.txt`, data, err => {
-                if (err) throw err;
+              fs.writeFile(`/doc/${body.Title}.txt`, data, err => {
+                console.log("File Saved!!");
               });
 
               res.render("movInf", {
