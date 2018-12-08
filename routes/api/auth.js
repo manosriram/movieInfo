@@ -52,7 +52,7 @@ router.post("/searchM", (req, res) => {
               }\n\n\n\nBy - A.Mano Sriram\n`;
 
               fs.writeFile(`./doc/${body.Title}.txt`, data, err => {
-                console.log(`File Saved -> ${body.Title}`);
+                console.log(`File Saved -> ${body.Title} : ${body.Year}`);
               });
 
               res.render("movInf", {
