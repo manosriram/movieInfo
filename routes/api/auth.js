@@ -23,11 +23,11 @@ router.post("/searchM", (req, res) => {
         try {
           if (
             (response.statusCode == 500).json(response.statusCode == 500) ||
-            response.statusCode == 400 ||
-            response.statusCode == 403 ||
-            response.statusCode == 401 ||
-            response.statusCode == 503 ||
-            response.statusCode == 403
+            (response.statusCode == 400).json(response.statusCode == 400) ||
+            (response.statusCode == 403).json(response.statusCode == 403) ||
+            (response.statusCode == 401).json(response.statusCode == 401) ||
+            (response.statusCode == 503).json(response.statusCode == 503) ||
+            (response.statusCode == 403).json(response.statusCode == 403)
           ) {
             res.render("err");
           } else throw error;
