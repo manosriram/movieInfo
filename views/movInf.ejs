@@ -59,8 +59,9 @@
         <br />
         <h3><strong>Country</strong> <%= data.Country %></h3>
         <br />
+        <% if(data.Ratings[0]) { %>
         <h3><strong>Rating</strong> <%= data.Ratings[0].Value %></h3>
-        <br />
+        <% } %> <br />
         <h3><strong>IMDB Votes</strong> <%= data.imdbVotes %></h3>
         <br />
         <h3><strong>Type : </strong><%= data.Type %></h3>

@@ -13,7 +13,9 @@ router.get("/", (req, res) => {
 
 router.post("/searchM", (req, res) => {
   if (req.body.search) {
-    const key = `http://www.omdbapi.com/?t=${req.body.search}&apikey=5d43c09e`;
+    const key = `http://www.omdbapi.com/?t=${req.body.search}&y=${
+      req.body.year
+    }&Language=tamil&apikey=5d43c09e`;
     request(
       {
         url: key,
