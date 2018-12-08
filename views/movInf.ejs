@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
     <%- include bootstrap.ejs %>
+
     <link
-      href="https://fonts.googleapis.com/css?family=Fugaz+One"
+      href="https://fonts.googleapis.com/css?family=Kanit"
       rel="stylesheet"
     />
 
@@ -18,7 +19,8 @@
     }
 
     body {
-      font-family: "Fugaz One", cursive;
+      font-family: "Kanit", sans-serif;
+
       background: #2f363f;
       text-align: center;
     }
@@ -27,13 +29,22 @@
     h4,
     h1 {
       color: #2f363f;
-      font-size: px;
+      font-size: 20px;
+    }
+    a {
+      font-size: 20px;
     }
     #wiki {
       text-align: center;
     }
     strong {
       color: lightslategrey;
+    }
+    img {
+      width: 280px;
+      height: 280px;
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
     }
   </style>
   <body>
@@ -78,7 +89,7 @@
         <% } %> <br /><br />
         <h2 id="wiki">
           <a href="/api/getMovie/<%=data.Title %>/<%= data.Year%>"
-            ><%= data.Title %> Wiki
+            >"<%= data.Title %>" Wiki
           </a>
         </h2>
         <h2 id="wiki">
