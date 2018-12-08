@@ -25,7 +25,8 @@ router.post("/searchM", (req, res) => {
             response.statusCode == 404 ||
             response.statusCode == 400 ||
             response.statusCode == 403 ||
-            response.statusCode == 401
+            response.statusCode == 401 ||
+            response.statusCode == 503
           ) {
             res.render("err");
           } else throw error;
